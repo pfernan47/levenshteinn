@@ -52,7 +52,7 @@ jump (i,j) a e
   |Data.Map.member a (delta e ! (i,j))   =True
   |otherwise                             =False
 
--- evaluateEnfa evaluates the word v at the ENFA e
+-- "evaluateEnfa" evaluates the word v at the ENFA e
 evaluateEnfa :: (Num t, Num t1, Ord a, Ord t, Ord t1) =>
                 [a] -> ENFA (t1, t) a -> Set (t1, t)
 evaluateEnfa w e = evaluate w e (0,0)
