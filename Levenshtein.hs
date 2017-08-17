@@ -5,7 +5,6 @@ import Data.Map
 import Data.Set
 import Data.List
 
---
 levenshtein :: String -> Int -> [String] -> [Bool]
 levenshtein w n (x:xs) = [if ((length x )<= (length w +n) )
                           then (oneWord w n x) else (False)]
@@ -13,7 +12,7 @@ levenshtein w n (x:xs) = [if ((length x )<= (length w +n) )
 levenshtein w n []  = []
 
 -- "oneWord" determines if the word v is in an accepting state
-   at the ENFA built with w and n    
+-- at the ENFA built with w and n    
 oneWord :: (Num t, Ord a, Ord t) => [a] -> t -> [a] -> Bool
 oneWord w n v
   |Data.Set.null (Data.Set.intersection (accepting(buildEnfa w n))
