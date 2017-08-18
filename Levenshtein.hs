@@ -46,11 +46,11 @@ isRightState (i,j) w n
   |i== (length w) && j /=n    =True
   |otherwise                  =False
 
--- "buildEnfa" construct the Levenshtein automaton, "floor" by "floor"
+-- "buildEnfa" constructs the Levenshtein automaton, "floor" by "floor"
 buildEnfa :: (Ord a1, Ord a, Num a) => [a1] -> a -> ENFA (Int, a) a1
 buildEnfa w n = buildState (0,0) w w n (initENFA (0,0))
 
--- "buildState" construct the states for the Levenshtein automaton with its 
+-- "buildState" constructs the states for the Levenshtein automaton with its 
 -- respectives transitions, defining if a transition is allowed or not and 
 -- creating the acceptation states set
 buildState :: (Num a1, Ord a1, Ord a) => (Int, a1) -> [a] -> [a] -> a1 
@@ -80,7 +80,7 @@ evaluateEnfa :: (Num t, Num t1, Ord a, Ord t, Ord t1) =>
                 [a] -> ENFA (t1, t) a -> Set (t1, t)
 evaluateEnfa w e = evaluate w e (0,0)
 
--- "evaluate" execute the transitions, identifying its kind according to the 
+-- "evaluate" executes the transitions, identifying its kind according to the 
 -- entrance received by the state
 evaluate ::(Ord t1, Ord t, Ord a)=>[a]->ENFA (t1, t) a-> (t1, t) -> Set (t1, t)
 evaluate [] e (i,j)
