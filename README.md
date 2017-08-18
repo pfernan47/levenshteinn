@@ -17,11 +17,11 @@ the final state is an acceptation or negation state
 
 ## Usage:
 
-*levenshtein :: String -> Int -> [String] -> [Bool] *
+levenshtein :: String -> Int -> [String] -> [Bool] 
 
 To do a levenshtein calculation, initially, enter the reference word w and the 
 maximun distance n to consider, and after that, give a list of words to evaluate
 
 
-*GHC, version 8.0.2
-*Haskell Platform 8.0.2
+* GHC, version 8.0.2
+* Haskell Platform 8.0.2
