@@ -39,7 +39,7 @@ isUpperState (i,j) w n
   |otherwise                  =False
   
 -- "isRightState" determines if the current state is located at the last 
---column the Levenshtein automaton with word and degree n, except for the 
+--column the Levenshtein automaton with word w and degree n, except for the 
 -- state at the upper right corner
 isRightState :: (Eq a1, Foldable t) => (Int, a1) -> t a -> a1 -> Bool
 isRightState (i,j) w n
