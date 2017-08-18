@@ -22,7 +22,7 @@ oneWord w n v
    (evaluateEnfa v (buildEnfa w n)))                                  = False
   |otherwise                                                          = True
 
--- "isFinalState" determinates if the current state (i,j) is located at the right 
+-- "isFinalState" determines if the current state (i,j) is located at the right 
 -- upper corner of the Levenshtein automaton constructed with the word w and the 
 -- maximun distance n, based on the tuple contained in each state.
 isFinalState :: (Eq a1, Foldable t) => (Int, a1) -> t a -> a1 -> Bool
@@ -30,7 +30,7 @@ isFinalState (i,j) w n
   |i== (length w) && j==n     =True
   |otherwise                  =False
 
--- "isUpperState" determinates if the current state is located on the highest 
+-- "isUpperState" determines if the current state is located on the highest 
 -- row of the Levenshtein automaton with reference w and degree n,  except for 
 -- the state at the upper right corner
 isUpperState :: (Foldable t, Eq a1) => (Int, a1) -> t a -> a1 -> Bool
@@ -38,7 +38,7 @@ isUpperState (i,j) w n
   |j==n && i/= (length w)     =True
   |otherwise                  =False
   
--- "isRightState" determinates if the current state is located at the last 
+-- "isRightState" determines if the current state is located at the last 
 --column the Levenshtein automaton with word and degree n, except for the 
 -- state at the upper right corner
 isRightState :: (Eq a1, Foldable t) => (Int, a1) -> t a -> a1 -> Bool
