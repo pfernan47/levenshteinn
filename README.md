@@ -1,7 +1,7 @@
 # Levenshtein.hs
 
-* Paola Fernández López - pfernan4(at)eafit(dot)edu(dot)co
-* Juliana Vallejo Díez - jvalle22(at)eafit(dot)edu(dot)co
+* Paola Fernandez Lopez - pfernan4(at)eafit(dot)edu(dot)co
+* Juliana Vallejo Diez - jvalle22(at)eafit(dot)edu(dot)co
 
 ## Function definition:
 
