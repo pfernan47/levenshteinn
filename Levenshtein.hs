@@ -19,19 +19,26 @@ oneWord w n v
    (evaluateEnfa v (buildEnfa w n)))                                  = False
   |otherwise                                                          = True
 
+isFinalState :: (Eq a1, Foldable t) => (Int, a1) -> t a -> a1 -> Bool
 isFinalState (i,j) w n
   |i== (length w) && j==n     =True
   |otherwise                  =False
 
+isUpperState :: (Foldable t, Eq a1) => (Int, a1) -> t a -> a1 -> Bool
 isUpperState (i,j) w n
   |j==n && i/= (length w)     =True
   |otherwise                  =False
 
+isRightState :: (Eq a1, Foldable t) => (Int, a1) -> t a -> a1 -> Bool
 isRightState (i,j) w n
   |i== (length w) && j /=n    =True
   |otherwise                  =False
 
+buildEnfa :: (Ord a1, Ord a, Num a) => [a1] -> a -> ENFA (Int, a) a1
 buildEnfa w n = buildState (0,0) w w n (initENFA (0,0))
+
+buildState :: (Num a1, Ord a1, Ord a) => (Int, a1) -> [a] -> [a] -> a1 
+              -> ENFA (Int, a1) a -> ENFA (Int, a1) a
 buildState (i,j) [] w n e
   |isFinalState (i,j) w n  = accept (i,j) $ e
   |isRightState (i,j) w n  =trans ((i,j),Any,(i,j+1)).accept (i,j)
