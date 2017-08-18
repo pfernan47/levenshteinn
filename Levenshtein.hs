@@ -80,7 +80,7 @@ evaluateEnfa :: (Num t, Num t1, Ord a, Ord t, Ord t1) =>
                 [a] -> ENFA (t1, t) a -> Set (t1, t)
 evaluateEnfa w e = evaluate w e (0,0)
 
--- "evaluate" executes the transitions, identifying its kind according to the 
+-- "evaluate" executes the transitions, identifying its type according to the 
 -- input received by the state
 evaluate ::(Ord t1, Ord t, Ord a)=>[a]->ENFA (t1, t) a-> (t1, t) -> Set (t1, t)
 evaluate [] e (i,j)
