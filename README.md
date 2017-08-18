@@ -11,7 +11,7 @@ gotten from evaluate if w is at a distance n separated from each word in v,
 respectively. This evaluation is done using a Levenshtein automaton, developed
 by Klaus U. Schulz and Stoyan Mihov (2002). 
 This program creates the Levenshtein automaton considering its states like 
-floors, and its connections will depend of its transition kind (epsilon, any, 
+floors, and its connections will depend of its transition type (epsilon, any, 
 symbol), then, the final purpose is to determinate if after go over an automaton 
 the final state is an acceptation or negation state
 
