@@ -51,8 +51,8 @@ buildEnfa :: (Ord a1, Ord a, Num a) => [a1] -> a -> ENFA (Int, a) a1
 buildEnfa w n = buildState (0,0) w w n (initENFA (0,0))
 
 -- "buildState" constructs the states for the Levenshtein automaton with its 
--- respectives transitions, defining if a transition is allowed or not and 
--- creating the acceptation states set
+-- respective transitions, defining if a transition is allowed or not and 
+-- creating the acceptance states set
 buildState :: (Num a1, Ord a1, Ord a) => (Int, a1) -> [a] -> [a] -> a1 
               -> ENFA (Int, a1) a -> ENFA (Int, a1) a
 buildState (i,j) [] w n e
